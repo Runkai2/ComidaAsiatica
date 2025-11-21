@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyozas - Delicias Asiáticas</title>
+    <link rel="stylesheet" href="gyozas.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-top">
+                <a href="../index.html" class="home-button">Inicio</a>
+            </div>
+            <h1>Gyozas</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Galería de imágenes -->
+        <div class="gallery-container">
+            <button class="arrow left-arrow" onclick="changeImage(-1)" aria-label="Imagen anterior">
+                &#8249;
+            </button>
+            
+            <div class="image-wrapper">
+                <img id="gyozaImage" src="gyozas1.jpg" alt="Plato de Gyozas" class="fade">
+                <div class="image-counter">
+                    <span id="currentImage">1</span> / <span id="totalImages">3</span>
+                </div>
+            </div>
+            
+            <button class="arrow right-arrow" onclick="changeImage(1)" aria-label="Siguiente imagen">
+                &#8250;
+            </button>
+        </div>
+
+        <!-- Indicadores de posición -->
+        <div class="indicators">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Descripción principal -->
+        <section class="description">
+            <p>
+                Las gyozas son unas deliciosas albóndigas que originalmente vienen de China, aunque son muy populares en la cocina japonesa.
+                Están hechas de masa fina rellena de carne y vegetales.
+            </p>
+            <p>
+                Se cocinan al vapor o se fríen ligeramente para obtener una textura crujiente por fuera y jugosa por dentro.
+            </p>
+            <p>
+                ¡Es un manjar irresistible para los amantes de la comida asiática!
+            </p>
+        </section>
+
+        <!-- Curiosidades -->
+        <div class="curiosities">
+            <h2>¿Sabías qué?</h2>
+            <ul>
+                <li>En Japón, se cree que comer gyozas da buena suerte</li>
+                <li>Las gyozas pueden tener formas diferentes según la región</li>
+                <li>Existen versiones vegetarianas y veganas</li>
+                <li>El día 24 de diciembre es el "Día Nacional de las Gyozas" en Japón</li>
+            </ul>
+        </div>
+
+        <!-- Botones de compartir -->
+        <div class="share-section">
+            <p>¡Comparte esta página!</p>
+            <div class="share-buttons">
+                <button class="share-btn" onclick="sharePage()">Compartir</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Runkai Ji Wang - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="gyozas.js"></script>
+</body>
+</html>
