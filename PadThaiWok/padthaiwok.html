@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Tiene tanto css integrado para la estructura general, y css aparte para cosas más genericas, y algo de java script-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pad Thai Wok</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <!-- Navegación superior con un solo enlace -->
+    <nav>
+        <ul>
+            <a href="../index.html" id="MENU">INICIO</a> <!-- Enlace para volver al inicio -->
+        </ul>
+    </nav>
+
+    <!doctype html> 
+    <html lang="es">
+
+    <header>
+        <!-- Marca principal con logo y texto descriptivo -->
+        <div class="brand">
+            <div class="logo">PT</div> <!-- Logo con iniciales -->
+
+            <div>
+                <div style="font-weight:700">Pad Thai Wok</div> <!-- Nombre del negocio -->
+                <div style="font-size:12px;color:#888">Cocina Tailandesa • Wok & Streetfood</div> <!-- Descripción -->
+            </div>
+
+        </div>
+
+        <!-- Menú principal del sitio -->
+        <nav>
+            <a href="#about">Qué es</a> <!-- Enlace a sección "Sobre" -->
+            <a href="#menu">Menú</a> <!-- Enlace a sección del menú -->
+            <a href="#contact">Contacto</a> <!-- Enlace al formulario de contacto -->
+        </nav>
+    </header>
+
+    <!-- Sección principal de bienvenida -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Pad Thai Wok</h1>
+            <br><br>
+            <p>Sabores auténticos de Tailandia, preparados al wok con ingredientes frescos. Noodles salteados con salsa tamarindo, cacahuete crujiente y el punto perfecto de lima.</p>
+            <a class="cta" href="#menu">Ver tipos de Pad Thai Wok</a>
+        </div>
+
+        <div class="hero-right">
+            <div class="hero-card">
+                <!-- Imagen principal del plato -->
+                <img src="PADTHAI-CALLE-2.png" alt="Pad Thai" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre producto -->
+    <section id="about" class="info">
+        <div class="about">
+            <h2>Sobre Pad Thai Wok</h2>
+            <p>Típica comida a la cocina callejera tailandesa: recetas tradicionales adaptadas al ritmo de hoy.<br>Nuestra promesa es: ingredientes frescos, salsas caseras y preparaciones al instante en wok.
+            </p>
+        </div>
+
+        <!-- Gancho oferta -->
+        <div class="features">
+            <div style="background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.05)">
+                <h4 style="margin:0 0 8px 0">Para llevar y delivery</h4>
+                <p style="margin:0;color:#666">Perfecto para pedir y comer en familia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del menú con productos -->
+    <section id="menu" class="menu">
+        <h3>Nuestros productos favoritos</h3>
+
+        <div class="cards">
+            <!-- Producto 1 -->
+            <article class="card">
+                <img src="classic-pad-thai.jpg" alt="Classic Pad Thai">
+                <h4>Pad Thai clásico</h4>
+                <p>Fideos de arroz, tofu o pollo, brotes, cacahuetes y salsa tamarindo.</p>
+                <div class="price">€9.50</div>
+                <a class="buy" href="#">Precio Medio</a>
+            </article>
+
+            <!-- Producto 2 -->
+            <article class="card">
+                <img src="Wok-de-cerdo-agridulce-y-picante.jpg" alt="Spicy Wok">
+                <h4>Wok picante</h4>
+                <p>Verduras de temporada, chili fresco y una mezcla de especias thai.</p>
+                <div class="price">€8.50</div>
+                <a class="buy" href="#">Precio Medio</a>
+            </article>
+
+            <!-- Producto 3 -->
+            <article class="card">
+                <img src="Chicken-and-Veggie-Pad-Thai-R1-2.jpg" alt="Veggie Bowl">
+                <h4>Bowl vegetariano</h4>
+                <p>Tofu marinado, cacahuetes, lima y aromáticas hojas thai.</p>
+                <div class="price">€8.00</div>
+                <a class="buy" href="#">Precio Medio</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Sección de reseñas -->
+    <section class="testimonials">
+        <div class="quote">
+            <p>"Los mejores noodles de la ciudad. El punto ácido del tamarindo y el crujiente del cacahuete son perfectos. Repetiré seguro."</p>
+            <div style="margin-top:12px;font-weight:700;color:#333">— Ana R.</div>
+        </div>
+
+        <div class="happy">
+            <h4>La gente come y felices</h4>
+            <p style="color:#666">Opiniones reales sobre el sabor, rapidez y calidad. También lo encontramos en eventos privados y catering.</p>
+        </div>
+    </section>
+
+    <!-- Sección promocional con formulario -->
+    <section class="strip">
+        <div>
+            <strong>¿Listo para probarlo?</strong>
+            <div>Los llamados Jorge reciben un 70% de descuento en su primer pedido.</div>
+        </div>
+
+        <!-- Formulario de suscripción -->
+        <form id="contact" style="display:flex;gap:8px;align-items:center;">
+            <input type="email" placeholder="Tu correo" aria-label="email"> <!-- Campo de correo -->
+            <button type="submit">Consigue descuento en un restaurante asociado</button> <!-- Botón de envío -->
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+            <div>
+                <strong>Pad Thai Wok</strong> 
+                <div style="color:#999">Ángel Hernández Espinosa</div> 
+                <div style="color:#999">aheresp688@gmail.com</div> 
+            </div>
+            <div style="color:#999">Síguenos en redes para saber más</div>
+        </div>
+    </footer>
+
+    <!-- Javascript para el formulario -->
+    <script>
+        // Script simple para mostrar alerta al enviar el formulario
+        document.querySelector('#contact').addEventListener('submit', function(e){
+          e.preventDefault(); // Evita el envío real del formulario
+          alert('¡Gracias! Te hemos enviado el cupón al correo'); // Mensaje de confirmación
+        });
+    </script>
+</body>
+</html>
