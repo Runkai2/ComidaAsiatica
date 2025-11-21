@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centrar todo el contenido */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff9f8;
+    min-height: 100vh;
+    padding: 0;
+
+    text-align: center; /* CENTRA TODO */
+}
+
+/* ---------------- HEADER ---------------- */
+
+header {
+    background: linear-gradient(135deg, #ff6b35 0%, #e95c20 100%);
+    color: white;
+    text-align: center; /* CENTRADO */
+    padding: 60px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transform: rotate(30deg);
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+/* ---------------- NAV ---------------- */
+
+nav {
+    margin-top: 20px;
+    text-align: center; /* CENTRADO */
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* ---------------- GALERÍA ---------------- */
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* CENTRA IMÁGENES */
+    margin: 50px 0;
+    padding: 0 20px;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(233, 92, 32, 0.2);
+    border: 8px solid white;
+}
+
+#gyozaImage {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    margin: 0 auto; /* CENTRADO */
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover #gyozaImage {
+    transform: scale(1.02);
+}
+
+.image-counter {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 107, 53, 0.9);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ---------------- FLECHAS ---------------- */
+
+.arrow {
+    background: white;
+    border: 2px solid #ff6b35;
+    color: #ff6b35;
+    font-size: 2rem;
+    padding: 15px;
+    margin: 0 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow:hover {
+    background: #ff6b35;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+/* ---------------- INDICADORES ---------------- */
+
+.indicators {
+    text-align: center;
+    margin: 20px 0 40px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 8px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: #ff6b35;
+    transform: scale(1.2);
+}
+
+/* ---------------- DESCRIPCIÓN ---------------- */
+
+.description {
+    max-width: 800px;
+    margin: 40px auto; /* CENTRADO */
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+    border-left: 5px solid #ff6b35;
+    border-right: 5px solid #ff6b35;
+}
+
+.description p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* ---------------- CURIOSIDADES ---------------- */
+
+.curiosities {
+    max-width: 900px;
+    margin: 50px auto; /* CENTRADO */
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-top: 3px solid #ff6b35;
+}
+
+.curiosities h2 {
+    text-align: center;
+    color: #ff6b35;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+}
+
+.curiosities ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.curiosities li {
+    padding: 20px;
+    background: #fff9f8;
+    border-radius: 10px;
+    border-left: 4px solid #ff6b35;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curiosities li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.15);
+}
+
+/* ---------------- COMPARTIR ---------------- */
+
+.share-section {
+    text-align: center;
+    margin: 60px 0;
+    padding: 30px;
+}
+
+.share-section p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #ff6b35;
+    font-weight: 500;
+}
+
+.share-btn {
+    background: linear-gradient(135deg, #ff6b35 0%, #e95c20 100%);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg, #e95c20 0%, #ff6b35 100%);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    background: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* ---------------- ANIMACIONES ---------------- */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade {
+    animation: fade 0.8s ease-in-out;
+}
