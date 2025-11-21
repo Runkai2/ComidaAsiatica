@@ -1,20 +1,297 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platos Asiaticos</title>
+    <title>Comida Asiática</title>
+    <style>
+        /* ===== RESET Y CONFIGURACIÓN GENERAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fbfe;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* ===== VARIABLES DE COLOR ===== */
+        :root {
+            --azul-oscuro: #1a365d;
+            --azul-principal: #2c5282;
+            --azul-claro: #4a90e2;
+            --azul-suave: #e6f2ff;
+            --naranja: #ff6b35;
+            --blanco: #ffffff;
+            --gris-claro: #f5f7fa;
+            --texto-oscuro: #2d3748;
+        }
+        
+        /* ===== ENCABEZADO ===== */
+        header {
+            background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-principal));
+            color: var(--blanco);
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== CONTENIDO PRINCIPAL ===== */
+        main {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* ===== GALERÍA DE PLATOS ===== */
+        .dishes-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .dish-card {
+            width: 320px;
+            background: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dish-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .dish-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .dish-card:hover .dish-image img {
+            transform: scale(1.05);
+        }
+        
+        .dish-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: var(--blanco);
+            padding: 1.5rem 1rem 1rem;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        
+        .dish-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .dish-description {
+            color: var(--texto-oscuro);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        /* ===== BOTONES ===== */
+        .dish-button {
+            display: block;
+            text-align: center;
+            padding: 0.8rem 1.5rem;
+            background: var(--naranja);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .dish-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--azul-oscuro);
+            color: var(--blanco);
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .dishes-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            
+            .dish-card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 3rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+        }
+        
+        /* ===== DECORACIÓN ASIÁTICA ===== */
+        .decoration {
+            width: 100%;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%232c5282"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48.26-35.15,60.17-49.67C1044.31,31.37,1109.83,11.58,1200,18.28V0Z" opacity=".5" fill="%232c5282"/></svg>');
+            background-size: cover;
+            margin-top: -1px;
+        }
+    </style>
 </head>
 <body>
-    <h1> Holamundo</h1>
+    <!-- Encabezado -->
+    <header>
+        <div class="header-content">
+            <h1>Comida Asiática</h1>
+            <p class="subtitle">Descubre los auténticos sabores del Lejano Oriente</p>
+        </div>
+        <div class="decoration"></div>
+    </header>
     
-    <!--He añadido un agrupador de enlaces con enlace a la pagina de PadThaiWok-->
-  <nav>
-    <a href="Gyozas/gyozas.html">Gyozas</a>
-    <a href=PadThaiWok/padthaiwok.html>Pad Thai Wok</a>
-    <a href="Pagina_Alvaro/Pagina_Alvaro.html">Ramen</a>
-  </nav>
-
+    <!-- Contenido principal -->
+    <main>
+        <div class="dishes-container">
+            <!-- Plato 1: Gyozas -->
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="gyozas.jpg" alt="Gyozas">
+                    <div class="dish-name">Gyozas</div>
+                </div>
+                <div class="dish-info">
+                    <p class="dish-description">
+                        Deliciosas empanadillas japonesas rellenas de carne y verduras, 
+                        con una textura crujiente por fuera y suave por dentro.
+                    </p>
+                    <a href="Gyozas/gyozas.html" class="dish-button">Descubrir Gyozas</a>
+                </div>
+            </div>
+            
+            <!-- Plato 2: Ramen -->
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="ramen.jpg" alt="Ramen">
+                    <div class="dish-name">Ramen</div>
+                </div>
+                <div class="dish-info">
+                    <p class="dish-description">
+                        Reconfortante sopa japonesa con fideos, caldo sabroso y diversos ingredientes 
+                        como carne, huevo y vegetales.
+                    </p>
+                    <a href="Pagina_Alvaro/Pagina_Alvaro.html" class="dish-button">Descubrir Ramen</a>
+                </div>
+            </div>
+            
+            <!-- Plato 3: Pad Thai -->
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="padthai.jpg" alt="Pad Thai">
+                    <div class="dish-name">Pad Thai</div>
+                </div>
+                <div class="dish-info">
+                    <p class="dish-description">
+                        Plato tailandés emblemático de fideos salteados con salsa tamarindo, 
+                        cacahuetes, huevo y una combinación única de sabores.
+                    </p>
+                    <a href="PadThaiWok/padthaiwok.html" class="dish-button">Descubrir Pad Thai</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Comida Asiática - Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
